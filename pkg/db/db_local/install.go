@@ -16,7 +16,6 @@ import (
 	"github.com/sethvargo/go-retry"
 	psutils "github.com/shirou/gopsutil/process"
 	filehelpers "github.com/turbot/go-kit/files"
-	"github.com/turbot/go-kit/helpers"
 	"github.com/turbot/steampipe/pkg/constants"
 	"github.com/turbot/steampipe/pkg/db/db_common"
 	"github.com/turbot/steampipe/pkg/filepaths"
@@ -48,7 +47,7 @@ func EnsureDBInstalled(ctx context.Context) (err error) {
 	doneChan := make(chan bool, 1)
 	defer func() {
 		if r := recover(); r != nil {
-			err = sperr.Wrap(helpers.ToError(r))
+			err = sperr.Wrap(sperr.ToError(r))
 		}
 
 		utils.LogTime("db_local.EnsureDBInstalled end")
