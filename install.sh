@@ -46,9 +46,10 @@ else
 fi
 
 if [ $# -eq 0 ]; then
-	steampipe_uri="https://github.com/turbot/steampipe/releases/latest/download/steampipe_${target}"
+	steampipe_uri="https://github.com/Cenable/steampipe/releases/latest/download/steampipe_${target}"
 else
-	steampipe_uri="https://github.com/turbot/steampipe/releases/download/${1}/steampipe_${target}"
+	echo "not able to install Cenabl"
+	retunr("error")
 fi
 
 bin_dir="/usr/local/bin"
