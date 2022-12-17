@@ -15,7 +15,8 @@ import (
 )
 
 func getUserAgent() string {
-	return fmt.Sprintf("Turbot Steampipe/%s (+https://steampipe.io)", version.SteampipeVersion.String())
+	//return fmt.Sprintf("Turbot Steampipe/%s (+https://steampipe.io)", version.SteampipeVersion.String())
+	return fmt.Sprintf("Cenabl")
 }
 
 // BuildRequestPayload merges the provided payload with the standard payload that needs to be sent
